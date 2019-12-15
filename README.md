@@ -26,10 +26,10 @@ $ docker run -v $PWD/src:/app -td {Docker_Image_ID} /bin/bash
 $ docker exec -it {Docker_Container_ID} /bin/bash
 ```
 
-4. `rails new .`します。
+4. `rails new .`します。`--force`で強制的に上書きインストール、`--skip-bundle`で`rails new`の際に`bundle install`をしないようにする。
 
 ```shell
-$ rails new . --force
+$ rails new . --force --skip-bundle
 ```
 
 5. この状況でホスト側の`./src`ディレクトリの下にRailsアプリケーションのコード一式が出来上がる。

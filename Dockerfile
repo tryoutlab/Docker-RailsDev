@@ -20,9 +20,18 @@ COPY --from=node:12.13.0-stretch /opt/ /opt/
 ADD ./src/Gemfile $APP_ROOT/Gemfile
 ADD ./src/Gemfile.lock $APP_ROOT/Gemfile.lock
 
+# package.jsonを追加する
+ADD ./src/package.json $APP_ROOT/package.json
+
+# yarn.lockを追加する
+ADD ./src/yarn.lock $APP_ROOT/yarn.lock
+
 # bundle install
 ARG BUNDLE_INSTALL_ARGS="-j 4"
 RUN bundle install ${BUNDLE_INSTALL_ARGS}
+
+# yarn install
+RUN yarn install
 
 # srcフォルダをコンテナの中に追加する
 ADD ./src/ $APP_ROOT
