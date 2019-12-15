@@ -3,19 +3,10 @@ version: "3.7"
 services:
   rails:
     build: .
-
     image: "fuminimax-rails:6.0.2"
-
     init: true
-
+    command: rails s -p 3000 -b 0.0.0.0
     ports:
       - "3000:3000"
-
     volumes:
-      - rails-volume:/app
-      - ./vendor/docker/bundle:/usr/local/bundle
-      
-    entrypoint: /docker-entrypoint.sh
-
-volumes:
-  rails-volume:
+      - ./src:/app
