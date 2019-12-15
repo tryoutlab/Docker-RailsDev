@@ -4,7 +4,7 @@ services:
   rails:
     build: .
 
-    image: "fuminimax-rails:6.0.1"
+    image: "fuminimax-rails:6.0.2"
 
     init: true
 
