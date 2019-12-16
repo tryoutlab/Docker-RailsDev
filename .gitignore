@@ -1,1 +1,6 @@
 .DS_Store
+src/*
+!src/Gemfile
+!src/Gemfile.lock
+!src/package.json
+!src/yarn.lock

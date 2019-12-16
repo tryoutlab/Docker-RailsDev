@@ -7,7 +7,7 @@ ENV APP_ROOT /app
 # コンテナ内の/appをカレントディレクトリとして利用する
 WORKDIR $APP_ROOT
 
-# 環境変数にバージョンを指定（今回は利用しない）
+# 環境変数にバージョンを指定（今回は利用しないけど、バージョンのメモがてら残す）
 #ENV NODE_VERSION=12.13.0 
 #  NODE_DISTRO linux-x64 \
 #  YARN_VERSION 1.19.1
@@ -31,7 +31,7 @@ ARG BUNDLE_INSTALL_ARGS="-j 4"
 RUN bundle install ${BUNDLE_INSTALL_ARGS}
 
 # yarn install
-RUN yarn install
+RUN yarn install --modules-folder /usr/local/node_modules
 
 # srcフォルダをコンテナの中に追加する
 ADD ./src/ $APP_ROOT

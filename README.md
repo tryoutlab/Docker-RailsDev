@@ -26,10 +26,10 @@ $ docker run -v $PWD/src:/app -td {Docker_Image_ID} /bin/bash
 $ docker exec -it {Docker_Container_ID} /bin/bash
 ```
 
-4. `rails new .`します。`--force`で強制的に上書きインストール、`--skip-bundle`で`rails new`の際に`bundle install`をしないようにする。
+4. `rails new .`します。`--force`で強制的に上書きインストール、`--skip-bundle`で`rails new`の際に`bundle install`をしないようにする。`--skip-yarn`も同様、yarnでのパッケージインストールをしない。
 
 ```shell
-$ rails new . --force --skip-bundle
+$ rails new . --force --skip-bundle --skip-yarn
 ```
 
 5. この状況でホスト側の`./src`ディレクトリの下にRailsアプリケーションのコード一式が出来上がる。
@@ -44,5 +44,10 @@ $ rails new . --force --skip-bundle
 $ docker-compose build
 ```
 
-## Description
+### 起動
 
+アプリケーションを作成した後であれば、docker-composeで普通にupする。
+
+```shell
+$ docker-compose up
+```
