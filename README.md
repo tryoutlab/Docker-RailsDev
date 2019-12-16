@@ -34,7 +34,7 @@ $ rails new . --force --skip-bundle --skip-yarn
 
 5. この状況でホスト側の`./src`ディレクトリの下にRailsアプリケーションのコード一式が出来上がる。
 
-![./docs/img/filelists-0.png]()
+![filelists-0](./docs/img/filelists-0.png)
 
 ### Gemfileが更新された場合
 
